@@ -23,7 +23,6 @@ source "${HELPER}"
 
 # Default to sanitizing the vendor folder before extraction
 CLEAN_VENDOR=true
-
 ONLY_COMMON=
 ONLY_TARGET=
 KANG=
