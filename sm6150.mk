@@ -152,6 +152,11 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.mapper@4.0-impl-qti-display \
     android.hardware.memtrack@1.0-impl \
     android.hardware.memtrack@1.0-service \
+		libvulkan \
+		libsdmcore \
+		libsdmutils \
+		libstagefright_enc_common \
+		libtinyxml \
     vendor.qti.hardware.display.allocator-service
 
 PRODUCT_PACKAGES += \
@@ -235,14 +240,9 @@ PRODUCT_PACKAGES += \
     libhidltransport.vendor \
     libhwbinder.vendor
 
-
 # Media
 PRODUCT_PACKAGES += \
-    android.hardware.media.omx@1.0-impl
-
-# Media
-PRODUCT_PACKAGES += \
-		android.hardware.media.omx@1.0-service \
+    android.hardware.media.c2@1.0.vendor \
 		libavservices_minijail \
 		libavservices_minijail.vendor \
 		libavservices_minijail_vendor \
@@ -273,6 +273,13 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     com.android.media.swcodec \
     libsfplugin_ccodec
+
+# Media Extensions
+PRODUCT_PACKAGES += \
+    libavmediaserviceextensions \
+    libmediametrics \
+    libregistermsext \
+    mediametrics
 
 PRODUCT_COPY_FILES += \
     $(call find-copy-subdir-files,*,$(LOCAL_PATH)/media/,$(TARGET_COPY_OUT_VENDOR)/etc)
@@ -493,9 +500,12 @@ PRODUCT_COPY_FILES += \
 # WiFi Display
 PRODUCT_PACKAGES += \
     libavservices_minijail_32 \
+		libdisplayconfig \
     libdisplayconfig.qti \
+    libdisplayconfig.qti.vendor \
     libnl \
     libqdMetaData \
+		libqdMetaData.vendor \
     libwfdaac_vendor
 
 PRODUCT_BOOT_JARS += \
